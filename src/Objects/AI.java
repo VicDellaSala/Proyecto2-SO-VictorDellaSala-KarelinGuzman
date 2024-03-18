@@ -9,7 +9,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import proyecto2.Main;
 
-
 /**
  *
  * @author VicDellaSala
@@ -32,24 +31,24 @@ public class AI extends Thread {
 
         Random random = new Random();
         int randomNumber = random.nextInt(101);
-        int desition = randomNumber; 
+        int desition = randomNumber;
         try {
-            sleep(simulation.getBattleDuration()); 
+            sleep(simulation.getBattleDuration());
         } catch (InterruptedException ex) {
             Logger.getLogger(AI.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        if (0 <= desition && desition <= 40) { 
-            
+        if (0 <= desition && desition <= 40) {
+            Main.battleInterface.getBattle().setText("----LA PELEA ENTRE " + character1.getId() + " Y " + character2.getId() + " EMPIEZA----");
             System.out.println("----THE FIGHT BETWEEN " + character1.getId() + " AND " + character2.getId() + " BEGINS----");
-            if (character1.getAgilityPoints() > character2.getAgilityPoints()) { 
+            if (character1.getAgilityPoints() > character2.getAgilityPoints()) {
 
-                while (true) { 
+                while (true) {
                     character2.setHealthPoints(character2.getHealthPoints() - character1.getStrengthPoints());
+                    Main.battleInterface.getBattle().setText("El peleador " + character1.getId() + " golpeó a " + character2.getId() + " causando " + character1.getStrengthPoints() + " de daño");
                     System.out.println("The character " + character1.getId() + " hits " + character2.getId() + " for " + character1.getStrengthPoints() + " damage");
                     System.out.println(character2.getId() + "has " + character2.getHealthPoints() + "hp remaining!");
-                    if (character2.getHealthPoints() <= 0) { 
-
+                    if (character2.getHealthPoints() <= 0) {
                         System.out.println("The character " + character2.getId() + "DIED, " + character1.getId() + " wins");
                         admin.winnerEscenario(character1, character2);
                         regularShowVictory++;
@@ -58,12 +57,12 @@ public class AI extends Thread {
                         break;
                     }
                     character1.setHealthPoints(character1.getHealthPoints() - character2.getStrengthPoints());
+                    Main.battleInterface.getBattle().setText("El peleador " + character2.getId() + " golpeó " + character1.getId() + " causando " + character2.getStrengthPoints() + " de daño");
                     System.out.println("The character " + character2.getId() + " hits " + character1.getId() + " for " + character2.getStrengthPoints() + " damage");
                     System.out.println(character1.getId() + "has " + character1.getHealthPoints() + "hp remaining!");
-                    if (character1.getHealthPoints() <= 0) { 
-
+                    if (character1.getHealthPoints() <= 0) {
                         System.out.println("The character " + character1.getId() + "DIED, " + character2.getId() + " wins");
-                        admin.winnerEscenario(character2, character1); 
+                        admin.winnerEscenario(character2, character1);
                         avatarVictory++;
                         Main.battleInterface.getAVictories().setText(String.valueOf(avatarVictory));
                         Main.battleInterface.getResult().setText("El peleador " + character1.getId() + " murió de un susto, " + character2.getId() + " gana");
@@ -71,17 +70,17 @@ public class AI extends Thread {
                     }
 
                 }
-            } else { 
-                while (true) { 
-                  
+            } else {
+                while (true) {
+
                     character1.setHealthPoints(character1.getHealthPoints() - character2.getStrengthPoints());
+                    Main.battleInterface.getBattle().setText("El peleador " + character2.getId() + " golpeó " + character1.getId() + " causando " + character2.getStrengthPoints() + " de daño");
                     System.out.println("The character " + character2.getId() + " hits " + character1.getId() + " for " + character2.getStrengthPoints() + " damage");
                     System.out.println(character1.getId() + "has " + character1.getHealthPoints() + "hp remaining!");
 
-                    if (character1.getHealthPoints() <= 0) { 
-
+                    if (character1.getHealthPoints() <= 0) {
                         System.out.println("The character " + character1.getId() + "DIED, " + character2.getId() + " wins");
-                        admin.winnerEscenario(character2, character1); 
+                        admin.winnerEscenario(character2, character1);
                         avatarVictory++;
                         Main.battleInterface.getAVictories().setText(String.valueOf(avatarVictory));
                         Main.battleInterface.getResult().setText("El peleador " + character1.getId() + " estornudo y su caja toraxica implosiono, " + character2.getId() + " gana");
@@ -89,12 +88,12 @@ public class AI extends Thread {
                     }
 
                     character2.setHealthPoints(character2.getHealthPoints() - character1.getStrengthPoints());
+                    Main.battleInterface.getBattle().setText("El peleador " + character1.getId() + " golpeó " + character2.getId() + " causando " + character1.getStrengthPoints() + " de daño");
                     System.out.println("The character " + character1.getId() + " hits " + character2.getId() + " for " + character1.getStrengthPoints() + " damage");
                     System.out.println(character2.getId() + "has " + character2.getHealthPoints() + "hp remaining!");
-                    if (character2.getHealthPoints() <= 0) { 
-
+                    if (character2.getHealthPoints() <= 0) {
                         System.out.println("The character " + character2.getId() + "DIED, " + character1.getId() + " wins");
-                        admin.winnerEscenario(character1, character2); 
+                        admin.winnerEscenario(character1, character2);
                         regularShowVictory++;
                         Main.battleInterface.getRSVictories().setText(String.valueOf(regularShowVictory));
                         Main.battleInterface.getResult().setText("El peleador " + character2.getId() + " escuchó Harry Styles y murió, " + character1.getId() + " gana");
@@ -105,14 +104,14 @@ public class AI extends Thread {
             }
         }
 
-        if (40 < desition && desition <= 67) { 
+        if (40 < desition && desition <= 67) {
             System.out.println("----THE FIGHT BETWEEN " + character1.getId() + " AND " + character2.getId() + " ENDED IN A TIE----");
-            Main.battleInterface.getResult().setText("----THE FIGHT BETWEEN " + character1.getId() + " AND " + character2.getId() + " ENDED IN A TIE----");
+            Main.battleInterface.getResult().setText("----La pelea entre " + character1.getId() + " y " + character2.getId() + " terminó en empate----");
             admin.tieEscenario(character1, character2);
         }
         if (67 < desition && desition <= 100) {
             System.out.println("----THE FIGHT BETWEEN " + character1.getId() + " AND " + character2.getId() + " WAS CANCELLED, THEY WERE NOT READY FOR BATTLE----");
-            Main.battleInterface.getResult().setText("----THE FIGHT BETWEEN " + character1.getId() + " AND " + character2.getId() + " WAS CANCELLED, THEY WERE NOT READY FOR BATTLE----");
+            Main.battleInterface.getResult().setText("----La pelea entre " + character1.getId() + " y " + character2.getId() + " fue cancelada----");
             admin.canceledCombatEscenario(character1, character2);
         }
 

@@ -47,7 +47,7 @@ public class userInterface extends javax.swing.JFrame {
         changeTimeButton = new javax.swing.JButton();
         RSCharacter = new javax.swing.JLabel();
         ACharacter = new javax.swing.JLabel();
-        result = new javax.swing.JLabel();
+        battle = new javax.swing.JLabel();
         AName = new javax.swing.JLabel();
         RSName = new javax.swing.JLabel();
         level1RS = new javax.swing.JLabel();
@@ -82,6 +82,7 @@ public class userInterface extends javax.swing.JFrame {
         healthA = new javax.swing.JLabel();
         strengthA = new javax.swing.JLabel();
         agilityA = new javax.swing.JLabel();
+        result = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,12 +136,12 @@ public class userInterface extends javax.swing.JFrame {
         jPanel1.add(RSCharacter, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, 240));
 
         ACharacter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Avatar_Aang1.png"))); // NOI18N
-        jPanel1.add(ACharacter, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 320, -1, -1));
+        jPanel1.add(ACharacter, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, -1, 220));
 
-        result.setFont(new java.awt.Font("Syne Medium", 1, 18)); // NOI18N
-        result.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        result.setText("Resultado");
-        jPanel1.add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 600, 860, -1));
+        battle.setFont(new java.awt.Font("Syne Medium", 1, 18)); // NOI18N
+        battle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        battle.setText("Resultado");
+        jPanel1.add(battle, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, 860, -1));
 
         AName.setFont(new java.awt.Font("Syne Medium", 1, 18)); // NOI18N
         AName.setText("Aang");
@@ -250,6 +251,11 @@ public class userInterface extends javax.swing.JFrame {
         agilityA.setText("0");
         jPanel1.add(agilityA, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 400, 40, -1));
 
+        result.setFont(new java.awt.Font("Syne Medium", 1, 18)); // NOI18N
+        result.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        result.setText("Resultado");
+        jPanel1.add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 600, 860, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -303,6 +309,14 @@ public class userInterface extends javax.swing.JFrame {
         });
     }
 
+    public JLabel getBattle() {
+        return battle;
+    }
+
+    public void setBattle(JLabel battle) {
+        this.battle = battle;
+    }
+   
     public JLabel getAgilityA() {
         return agilityA;
     }
@@ -531,6 +545,7 @@ public class userInterface extends javax.swing.JFrame {
     private javax.swing.JLabel aiStatusLabel;
     private javax.swing.JTextField aiTimeField;
     private javax.swing.JLabel aiTimerLabel;
+    private javax.swing.JLabel battle;
     private javax.swing.JButton changeTimeButton;
     private javax.swing.JLabel healthA;
     private javax.swing.JLabel healthRS;

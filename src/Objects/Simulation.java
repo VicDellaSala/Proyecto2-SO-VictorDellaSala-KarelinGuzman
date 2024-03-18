@@ -64,6 +64,7 @@ public class Simulation extends Thread {
                     Main.battleInterface.getAiStatus().setText("Esperando");
                     sleep(1000);
                     Main.battleInterface.getResult().setText("");
+                    Main.battleInterface.getBattle().setText("");
 
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Simulation.class.getName()).log(Level.SEVERE, null, ex);

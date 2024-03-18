@@ -26,6 +26,7 @@ public class Main {
     public static void main(String[] args) {
         simulation.start();
         battleInterface.getResult().setText("");
-        
+        battleInterface.getBattle().setText("");
+
     }
 }
