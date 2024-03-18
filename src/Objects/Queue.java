@@ -2,7 +2,7 @@ package Objects;
 
 /**
  *
- * @author cdmar
+ * @author Victor Daniel
  */
 public class Queue {
 
