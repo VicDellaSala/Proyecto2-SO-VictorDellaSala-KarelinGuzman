@@ -79,12 +79,12 @@ public class Queue {
         Fighter pointer = getHead();
         while (pointer != null) {
 
-            queue = queue + pointer.getId() + " | ";
+            queue = queue + pointer.getId() + " - ";
             
             pointer = (Fighter) pointer.getNext();
         }
 
-        return "| "+queue;
+        return " - "+queue;
     }
 
     public void deleteFromQueue(Fighter elementToRemove) {

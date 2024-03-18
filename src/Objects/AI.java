@@ -12,7 +12,7 @@ import proyecto2.Main;
 
 /**
  *
- * @author cdmar
+ * @author VicDellaSala
  */
 public class AI extends Thread {
 
