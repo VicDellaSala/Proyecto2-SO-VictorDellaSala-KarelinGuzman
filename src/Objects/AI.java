@@ -7,6 +7,7 @@ package Objects;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import proyecto2.Main;
 
 
 /**
@@ -52,7 +53,7 @@ public class AI extends Thread {
                         System.out.println("The character " + character2.getId() + "DIED, " + character1.getId() + " wins");
                         admin.winnerEscenario(character1, character2);
                         regularShowVictory++;
-                        Main.battleInterface.getRegularShowVictories().setText(String.valueOf(regularShowVictory));
+                        Main.battleInterface.getRSVictories().setText(String.valueOf(regularShowVictory));
                         Main.battleInterface.getResult().setText("El personaje " + character2.getId() + " murió de hambre, " + character1.getId() + " gana");
                         break;
                     }
@@ -64,7 +65,7 @@ public class AI extends Thread {
                         System.out.println("The character " + character1.getId() + "DIED, " + character2.getId() + " wins");
                         admin.winnerEscenario(character2, character1); 
                         avatarVictory++;
-                        Main.battleInterface.getAvatarVictories().setText(String.valueOf(avatarVictory));
+                        Main.battleInterface.getAVictories().setText(String.valueOf(avatarVictory));
                         Main.battleInterface.getResult().setText("El peleador " + character1.getId() + " murió de un susto, " + character2.getId() + " gana");
                         break;
                     }
@@ -82,7 +83,7 @@ public class AI extends Thread {
                         System.out.println("The character " + character1.getId() + "DIED, " + character2.getId() + " wins");
                         admin.winnerEscenario(character2, character1); 
                         avatarVictory++;
-                        Main.battleInterface.getAvatarVictories().setText(String.valueOf(avatarVictory));
+                        Main.battleInterface.getAVictories().setText(String.valueOf(avatarVictory));
                         Main.battleInterface.getResult().setText("El peleador " + character1.getId() + " estornudo y su caja toraxica implosiono, " + character2.getId() + " gana");
                         break;
                     }
@@ -95,7 +96,7 @@ public class AI extends Thread {
                         System.out.println("The character " + character2.getId() + "DIED, " + character1.getId() + " wins");
                         admin.winnerEscenario(character1, character2); 
                         regularShowVictory++;
-                        Main.battleInterface.getRegularShowVictories().setText(String.valueOf(regularShowVictory));
+                        Main.battleInterface.getRSVictories().setText(String.valueOf(regularShowVictory));
                         Main.battleInterface.getResult().setText("El peleador " + character2.getId() + " escuchó Harry Styles y murió, " + character1.getId() + " gana");
                         break;
                     }

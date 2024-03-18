@@ -4,6 +4,9 @@
  */
 package proyecto2;
 
+import Objects.Corporation;
+import Objects.Simulation;
+
 /**
  *
  * @author VicDellaSala
@@ -13,8 +16,16 @@ public class Main {
     /**
      * @param args the command line arguments
      */
+    public static Simulation simulation = new Simulation("RS", "A", 3000);
+
+    public static Corporation cartoonNetwork = simulation.getStudio1();
+    public static Corporation nickelodeon = simulation.getStudio2();
+
+    public static userInterface battleInterface = new userInterface();
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        simulation.start();
+        battleInterface.getResult().setText("");
+        
     }
-    
 }

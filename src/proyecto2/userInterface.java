@@ -4,6 +4,12 @@
  */
 package proyecto2;
 
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JTextField;
+
 /**
  *
  * @author VicDellaSala
@@ -15,6 +21,8 @@ public class userInterface extends javax.swing.JFrame {
      */
     public userInterface() {
         initComponents();
+        this.setVisible(true);
+        aiTimeField.setText(String.valueOf(Main.simulation.getBattleDuration() / 1000));
     }
 
     /**
@@ -37,6 +45,27 @@ public class userInterface extends javax.swing.JFrame {
         aiTimerLabel = new javax.swing.JLabel();
         aiTimeField = new javax.swing.JTextField();
         changeTimeButton = new javax.swing.JButton();
+        RSCharacter = new javax.swing.JLabel();
+        ACharacter = new javax.swing.JLabel();
+        result = new javax.swing.JLabel();
+        AName = new javax.swing.JLabel();
+        RSName = new javax.swing.JLabel();
+        level1RS = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        level2RS = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        level3RS = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        reinforceRS = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        level1A = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        level2A = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        level3A = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        reinforceA = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,18 +79,18 @@ public class userInterface extends javax.swing.JFrame {
         AVictories.setFont(new java.awt.Font("Syne Medium", 1, 24)); // NOI18N
         AVictories.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AVictories.setText("0");
-        jPanel1.add(AVictories, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 100, -1));
+        jPanel1.add(AVictories, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 100, -1));
 
         RSVictories.setFont(new java.awt.Font("Syne Medium", 1, 24)); // NOI18N
         RSVictories.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         RSVictories.setText("0");
-        jPanel1.add(RSVictories, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 180, 110, -1));
+        jPanel1.add(RSVictories, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 170, 110, -1));
 
         RSLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Regular_Show_Logo-450.png"))); // NOI18N
         jPanel1.add(RSLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         ALogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Avatar-the-Last-Airbender-Symbol.png"))); // NOI18N
-        jPanel1.add(ALogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 50, -1, 130));
+        jPanel1.add(ALogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 40, -1, 130));
 
         aiStatusLabel.setFont(new java.awt.Font("Syne Medium", 1, 18)); // NOI18N
         aiStatusLabel.setText("Estatus de la IA:");
@@ -86,11 +115,78 @@ public class userInterface extends javax.swing.JFrame {
         });
         jPanel1.add(changeTimeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, -1, 30));
 
+        RSCharacter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rigby1.png"))); // NOI18N
+        jPanel1.add(RSCharacter, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, 240));
+
+        ACharacter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Avatar_Aang1.png"))); // NOI18N
+        jPanel1.add(ACharacter, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 320, -1, -1));
+
+        result.setFont(new java.awt.Font("Syne Medium", 1, 18)); // NOI18N
+        result.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        result.setText("Resultado");
+        jPanel1.add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 600, 860, -1));
+
+        AName.setFont(new java.awt.Font("Syne Medium", 1, 18)); // NOI18N
+        AName.setText("Aang");
+        jPanel1.add(AName, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 530, -1, -1));
+
+        RSName.setFont(new java.awt.Font("Syne Medium", 1, 18)); // NOI18N
+        RSName.setText("Rigby");
+        jPanel1.add(RSName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, -1, -1));
+
+        level1RS.setText("1");
+        jPanel1.add(level1RS, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 420, -1));
+
+        jLabel2.setText("Nivel 1:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+
+        level2RS.setText("2");
+        jPanel1.add(level2RS, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 420, -1));
+
+        jLabel3.setText("Nivel 2:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+
+        level3RS.setText("3");
+        jPanel1.add(level3RS, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 420, -1));
+
+        jLabel4.setText("Nivel 3:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+
+        reinforceRS.setText("4");
+        jPanel1.add(reinforceRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 420, -1));
+
+        jLabel5.setText("Refuerzo:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
+
+        level1A.setText("1");
+        jPanel1.add(level1A, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 420, -1));
+
+        jLabel6.setText("Nivel 1:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, -1, -1));
+
+        level2A.setText("2");
+        jPanel1.add(level2A, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 220, 420, -1));
+
+        jLabel7.setText("Nivel 2:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, -1, -1));
+
+        level3A.setText("3");
+        jPanel1.add(level3A, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 240, 420, -1));
+
+        jLabel8.setText("Nivel 3:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 240, -1, -1));
+
+        reinforceA.setText("4");
+        jPanel1.add(reinforceA, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 420, -1));
+
+        jLabel9.setText("Refuerzo:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1215, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1226, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +197,7 @@ public class userInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void changeTimeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeTimeButtonActionPerformed
-        // TODO add your handling code here:
+        Main.simulation.setBattleDuration((int) (Float.parseFloat(aiTimeField.getText()) * 1000));
     }//GEN-LAST:event_changeTimeButtonActionPerformed
 
     /**
@@ -139,17 +235,185 @@ public class userInterface extends javax.swing.JFrame {
         });
     }
 
+    public JLabel getLevel1A() {
+        return level1A;
+    }
+
+    public void setLevel1A(JLabel level1A) {
+        this.level1A = level1A;
+    }
+
+    public JLabel getLevel1RS() {
+        return level1RS;
+    }
+
+    public void setLevel1RS(JLabel level1RS) {
+        this.level1RS = level1RS;
+    }
+
+    public JLabel getLevel2A() {
+        return level2A;
+    }
+
+    public void setLevel2A(JLabel level2A) {
+        this.level2A = level2A;
+    }
+
+    public JLabel getLevel2RS() {
+        return level2RS;
+    }
+
+    public void setLevel2RS(JLabel level2RS) {
+        this.level2RS = level2RS;
+    }
+
+    public JLabel getLevel3A() {
+        return level3A;
+    }
+
+    public void setLevel3A(JLabel level3A) {
+        this.level3A = level3A;
+    }
+
+    public JLabel getLevel3RS() {
+        return level3RS;
+    }
+
+    public void setLevel3RS(JLabel level3RS) {
+        this.level3RS = level3RS;
+    }
+
+    public JLabel getReinforceA() {
+        return reinforceA;
+    }
+
+    public void setReinforceA(JLabel reinforceA) {
+        this.reinforceA = reinforceA;
+    }
+
+    public JLabel getReinforceRS() {
+        return reinforceRS;
+    }
+
+    public void setReinforceRS(JLabel reinforceRS) {
+        this.reinforceRS = reinforceRS;
+    }
+    
+    
+        
+    public JLabel getAName() {
+        return AName;
+    }
+
+    public void setAName(JLabel AName) {
+        this.AName = AName;
+    }
+
+    public JLabel getRSName() {
+        return RSName;
+    }
+
+    public void setRSName(JLabel RSName) {
+        this.RSName = RSName;
+    }
+
+    public JLabel getAVictories() {
+        return AVictories;
+    }
+
+    public void setAVictories(JLabel AVictories) {
+        this.AVictories = AVictories;
+    }
+
+    public JLabel getACharacter() {
+        return ACharacter;
+    }
+
+    public void setACharacter(JLabel ACharacter) {
+        this.ACharacter = ACharacter;
+    }
+
+    public JLabel getRSCharacter() {
+        return RSCharacter;
+    }
+
+    public void setRSCharacter(JLabel RSCharacter) {
+        this.RSCharacter = RSCharacter;
+    }
+
+    public JLabel getRSVictories() {
+        return RSVictories;
+    }
+
+    public void setRSVictories(JLabel RSVictories) {
+        this.RSVictories = RSVictories;
+    }
+
+    public JLabel getAiStatus() {
+        return aiStatus;
+    }
+
+    public void setAiStatus(JLabel aiStatus) {
+        this.aiStatus = aiStatus;
+    }
+
+    public JTextField getAiTimeField() {
+        return aiTimeField;
+    }
+
+    public void setAiTimeField(JTextField aiTimeField) {
+        this.aiTimeField = aiTimeField;
+    }
+
+    public JButton getChangeTimeButton() {
+        return changeTimeButton;
+    }
+
+    public void setChangeTimeButton(JButton changeTimeButton) {
+        this.changeTimeButton = changeTimeButton;
+    }
+
+    public JLabel getResult() {
+        return result;
+    }
+
+    public void setResult(JLabel result) {
+        this.result = result;
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ACharacter;
     private javax.swing.JLabel ALogo;
+    private javax.swing.JLabel AName;
     private javax.swing.JLabel AVictories;
+    private javax.swing.JLabel RSCharacter;
     private javax.swing.JLabel RSLogo;
+    private javax.swing.JLabel RSName;
     private javax.swing.JLabel RSVictories;
     private javax.swing.JLabel aiStatus;
     private javax.swing.JLabel aiStatusLabel;
     private javax.swing.JTextField aiTimeField;
     private javax.swing.JLabel aiTimerLabel;
     private javax.swing.JButton changeTimeButton;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel level1A;
+    private javax.swing.JLabel level1RS;
+    private javax.swing.JLabel level2A;
+    private javax.swing.JLabel level2RS;
+    private javax.swing.JLabel level3A;
+    private javax.swing.JLabel level3RS;
+    private javax.swing.JLabel reinforceA;
+    private javax.swing.JLabel reinforceRS;
+    private javax.swing.JLabel result;
     private javax.swing.JLabel vs;
     // End of variables declaration//GEN-END:variables
 }

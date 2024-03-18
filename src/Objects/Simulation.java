@@ -11,7 +11,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-
+import proyecto2.Main;
+import static proyecto2.Main.battleInterface;
+import static proyecto2.Main.cartoonNetwork;
+import static proyecto2.Main.nickelodeon;
 
 /**
  *
@@ -44,16 +47,18 @@ public class Simulation extends Thread {
                 System.out.println("-------Game ended--------"); //If no characters were found in one studio, then the game will end
                 break;
             } else {
-                battleInterface.getLevel1RegularShow().setText(cartoonNetwork.getPrior1Queue().printQueue());
-                battleInterface.getLevel2RegularShow().setText(cartoonNetwork.getPrior2Queue().printQueue());
-                battleInterface.getLevel3RegularShow().setText(cartoonNetwork.getPrior3Queue().printQueue());
-                battleInterface.getReinforceRegularShow().setText(cartoonNetwork.getReinfQueue().printQueue());
+                battleInterface.getLevel1RS().setText(cartoonNetwork.getPrior1Queue().printQueue());
+                battleInterface.getLevel2RS().setText(cartoonNetwork.getPrior2Queue().printQueue());
+                battleInterface.getLevel3RS().setText(cartoonNetwork.getPrior3Queue().printQueue());
+                battleInterface.getReinforceRS().setText(cartoonNetwork.getReinfQueue().printQueue());
 
-                battleInterface.getLevel1Avatar().setText(nickelodeon.getPrior1Queue().printQueue());
-                battleInterface.getLevel2Avatar().setText(nickelodeon.getPrior2Queue().printQueue());
-                battleInterface.getLevel3Avatar().setText(nickelodeon.getPrior3Queue().printQueue());
-                battleInterface.getReinforceAvatar().setText(nickelodeon.getReinfQueue().printQueue());
+                battleInterface.getLevel1A().setText(nickelodeon.getPrior1Queue().printQueue());
+                battleInterface.getLevel2A().setText(nickelodeon.getPrior2Queue().printQueue());
+                battleInterface.getLevel3A().setText(nickelodeon.getPrior3Queue().printQueue());
+                battleInterface.getReinforceA().setText(nickelodeon.getReinfQueue().printQueue());
+
                 int tenth = (int) (getBattleDuration() * 0.10);
+
                 AI.setStatus("waiting");
                 try {
                     Main.battleInterface.getAiStatus().setText("Esperando");
@@ -67,19 +72,11 @@ public class Simulation extends Thread {
                 Fighter character2 = chosenCharacters[1]; //Studio 2 character
 
                 try {
-                    battleInterface.getRegularShowFighter().setIcon(new ImageIcon(ImageIO.read(new File(character1.getImageCollection()[0]))));
-                    battleInterface.getHealthValueRegularShow().setText(String.valueOf(character1.getHealthPoints()));
-                    battleInterface.getAgilityValueRegularShow().setText(String.valueOf(character1.getAgilityPoints()));
-                    battleInterface.getStrengthValueRegularShow().setText(String.valueOf(character1.getStrengthPoints()));
-                    battleInterface.getSkillValueRegularShow().setText(String.valueOf(character1.getSkillPoints()));
-                    battleInterface.getCharacterNameRegularShow().setText(String.valueOf(character1.getName()));
+                    battleInterface.getRSCharacter().setIcon(new ImageIcon(ImageIO.read(new File(character1.getImageCollection()[0]))));
+                    battleInterface.getRSName().setText(String.valueOf(character1.getName()));
 
-                    battleInterface.getAvatarFighter().setIcon(new ImageIcon(ImageIO.read(new File(character2.getImageCollection()[0]))));
-                    battleInterface.getHealthValueAvatar().setText(String.valueOf(character2.getHealthPoints()));
-                    battleInterface.getAgilityValueAvatar().setText(String.valueOf(character2.getAgilityPoints()));
-                    battleInterface.getStrengthValueAvatar().setText(String.valueOf(character2.getStrengthPoints()));
-                    battleInterface.getSkillValueAvatar().setText(String.valueOf(character2.getSkillPoints()));
-                    battleInterface.getCharacterNameAvatar().setText(String.valueOf(character2.getName()));
+                    battleInterface.getACharacter().setIcon(new ImageIcon(ImageIO.read(new File(character2.getImageCollection()[0]))));
+                    battleInterface.getAName().setText(String.valueOf(character2.getName()));
 
                 } catch (IOException ex) {
                     Logger.getLogger(Simulation.class.getName()).log(Level.SEVERE, null, ex);
