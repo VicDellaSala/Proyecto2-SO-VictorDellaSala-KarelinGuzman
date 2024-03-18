@@ -66,6 +66,22 @@ public class userInterface extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         reinforceA = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        skillRS = new javax.swing.JLabel();
+        healthRS = new javax.swing.JLabel();
+        strengthRS = new javax.swing.JLabel();
+        agilityRS = new javax.swing.JLabel();
+        skillA = new javax.swing.JLabel();
+        healthA = new javax.swing.JLabel();
+        strengthA = new javax.swing.JLabel();
+        agilityA = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,18 +110,18 @@ public class userInterface extends javax.swing.JFrame {
 
         aiStatusLabel.setFont(new java.awt.Font("Syne Medium", 1, 18)); // NOI18N
         aiStatusLabel.setText("Estatus de la IA:");
-        jPanel1.add(aiStatusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 30, -1, -1));
+        jPanel1.add(aiStatusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, -1, -1));
 
         aiStatus.setFont(new java.awt.Font("Syne Medium", 0, 18)); // NOI18N
         aiStatus.setText("Anunciando");
-        jPanel1.add(aiStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 30, 320, -1));
+        jPanel1.add(aiStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 320, -1));
 
         aiTimerLabel.setFont(new java.awt.Font("Syne Medium", 1, 18)); // NOI18N
         aiTimerLabel.setText("Tiempo A.I.");
-        jPanel1.add(aiTimerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+        jPanel1.add(aiTimerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
 
         aiTimeField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel1.add(aiTimeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 120, -1));
+        jPanel1.add(aiTimeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 120, -1));
 
         changeTimeButton.setText("Cambiar");
         changeTimeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +129,7 @@ public class userInterface extends javax.swing.JFrame {
                 changeTimeButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(changeTimeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, -1, 30));
+        jPanel1.add(changeTimeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, 30));
 
         RSCharacter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rigby1.png"))); // NOI18N
         jPanel1.add(RSCharacter, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, 240));
@@ -182,6 +198,58 @@ public class userInterface extends javax.swing.JFrame {
         jLabel9.setText("Refuerzo:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, -1, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/health.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 290, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/health.png"))); // NOI18N
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Strength.png"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 340, -1, -1));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Strength.png"))); // NOI18N
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agility.png"))); // NOI18N
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 390, -1, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agility.png"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/skill.png"))); // NOI18N
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 440, -1, -1));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/skill.png"))); // NOI18N
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, -1));
+
+        skillRS.setText("0");
+        jPanel1.add(skillRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 40, -1));
+
+        healthRS.setText("0");
+        jPanel1.add(healthRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 40, -1));
+
+        strengthRS.setText("0");
+        jPanel1.add(strengthRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 40, -1));
+
+        agilityRS.setText("0");
+        jPanel1.add(agilityRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 40, -1));
+
+        skillA.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        skillA.setText("0");
+        jPanel1.add(skillA, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 450, 40, -1));
+
+        healthA.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        healthA.setText("0");
+        jPanel1.add(healthA, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 300, 40, -1));
+
+        strengthA.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        strengthA.setText("0");
+        jPanel1.add(strengthA, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 350, 40, -1));
+
+        agilityA.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        agilityA.setText("0");
+        jPanel1.add(agilityA, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 400, 40, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -235,6 +303,72 @@ public class userInterface extends javax.swing.JFrame {
         });
     }
 
+    public JLabel getAgilityA() {
+        return agilityA;
+    }
+
+    public void setAgilityA(JLabel agilityA) {
+        this.agilityA = agilityA;
+    }
+
+    public JLabel getAgilityRS() {
+        return agilityRS;
+    }
+
+    public void setAgilityRS(JLabel agilityRS) {
+        this.agilityRS = agilityRS;
+    }
+
+    public JLabel getHealthA() {
+        return healthA;
+    }
+
+    public void setHealthA(JLabel healthA) {
+        this.healthA = healthA;
+    }
+
+    public JLabel getHealthRS() {
+        return healthRS;
+    }
+
+    public void setHealthRS(JLabel healthRS) {
+        this.healthRS = healthRS;
+    }
+
+    public JLabel getSkillA() {
+        return skillA;
+    }
+
+    public void setSkillA(JLabel skillA) {
+        this.skillA = skillA;
+    }
+
+    public JLabel getSkillRS() {
+        return skillRS;
+    }
+
+    public void setSkillRS(JLabel skillRS) {
+        this.skillRS = skillRS;
+    }
+
+    public JLabel getStrengthA() {
+        return strengthA;
+    }
+
+    public void setStrengthA(JLabel strengthA) {
+        this.strengthA = strengthA;
+    }
+
+    public JLabel getStrengthRS() {
+        return strengthRS;
+    }
+
+    public void setStrengthRS(JLabel strengthRS) {
+        this.strengthRS = strengthRS;
+    }
+
+    
+    
     public JLabel getLevel1A() {
         return level1A;
     }
@@ -391,11 +525,23 @@ public class userInterface extends javax.swing.JFrame {
     private javax.swing.JLabel RSLogo;
     private javax.swing.JLabel RSName;
     private javax.swing.JLabel RSVictories;
+    private javax.swing.JLabel agilityA;
+    private javax.swing.JLabel agilityRS;
     private javax.swing.JLabel aiStatus;
     private javax.swing.JLabel aiStatusLabel;
     private javax.swing.JTextField aiTimeField;
     private javax.swing.JLabel aiTimerLabel;
     private javax.swing.JButton changeTimeButton;
+    private javax.swing.JLabel healthA;
+    private javax.swing.JLabel healthRS;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -414,6 +560,10 @@ public class userInterface extends javax.swing.JFrame {
     private javax.swing.JLabel reinforceA;
     private javax.swing.JLabel reinforceRS;
     private javax.swing.JLabel result;
+    private javax.swing.JLabel skillA;
+    private javax.swing.JLabel skillRS;
+    private javax.swing.JLabel strengthA;
+    private javax.swing.JLabel strengthRS;
     private javax.swing.JLabel vs;
     // End of variables declaration//GEN-END:variables
 }

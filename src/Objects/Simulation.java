@@ -73,9 +73,17 @@ public class Simulation extends Thread {
 
                 try {
                     battleInterface.getRSCharacter().setIcon(new ImageIcon(ImageIO.read(new File(character1.getImageCollection()[0]))));
+                    battleInterface.getHealthRS().setText(String.valueOf(character1.getHealthPoints()));
+                    battleInterface.getAgilityRS().setText(String.valueOf(character1.getAgilityPoints()));
+                    battleInterface.getStrengthRS().setText(String.valueOf(character1.getStrengthPoints()));
+                    battleInterface.getSkillRS().setText(String.valueOf(character1.getSkillPoints()));
                     battleInterface.getRSName().setText(String.valueOf(character1.getName()));
 
                     battleInterface.getACharacter().setIcon(new ImageIcon(ImageIO.read(new File(character2.getImageCollection()[0]))));
+                    battleInterface.getHealthA().setText(String.valueOf(character2.getHealthPoints()));
+                    battleInterface.getAgilityA().setText(String.valueOf(character2.getAgilityPoints()));
+                    battleInterface.getStrengthA().setText(String.valueOf(character2.getStrengthPoints()));
+                    battleInterface.getSkillA().setText(String.valueOf(character2.getSkillPoints()));
                     battleInterface.getAName().setText(String.valueOf(character2.getName()));
 
                 } catch (IOException ex) {
