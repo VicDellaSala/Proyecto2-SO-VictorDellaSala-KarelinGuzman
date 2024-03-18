@@ -23,35 +23,7 @@ public class Admin {
         this.simulation = simulation;
     }
     
-    public void EnqueueCharacters(Fighter character1, Fighter character2){
-        //Depending on the overallQuality of the characters, they will be added to their corresponding queue
-        if (character1.getOverallQuality() == 1) {
-            studio1.getPrior3Queue().enqueue(character1);
-            //System.out.println("Character " + character1.getId() + "has been added to studio1 prior3 queue");
-        }   
-        if (character1.getOverallQuality() == 2) {
-            studio1.getPrior2Queue().enqueue(character1);
-            //System.out.println("Character " + character1.getId() + "has been added to studio1 prior2 queue");
-        }
-        if (character1.getOverallQuality() == 3) {
-            studio1.getPrior1Queue().enqueue(character1);
-            //System.out.println("Character " + character1.getId() + "has been added to studio1 prior1 queue");
-        }
-        if (character2.getOverallQuality() == 1) {
-            studio2.getPrior3Queue().enqueue(character2);
-            //System.out.println("Character " + character2.getId() + "has been added to studio2 prior3 queue");
-        }
-        if (character2.getOverallQuality() == 2) {
-            studio2.getPrior2Queue().enqueue(character2);
-            //System.out.println("Character " + character2.getId() + "has been added to studio2 prior2 queue");
-        }
-        
-        if (character2.getOverallQuality() == 3) {
-            studio2.getPrior1Queue().enqueue(character2);
-            //System.out.println("Character " + character2.getId() + "has been added to studio2 prior1 queue");
-        }
-        updateReviewCycle();
-    }
+    
     
     public Fighter[] chooseCharactersBattle(){ 
         /*
@@ -161,17 +133,37 @@ public class Admin {
         System.out.println("The character " + character1.getId() + " has been added to studio1 reinforcement queue");
         System.out.println("The character " + character2.getId() + " has been added to studio2 reinforcement queue"); 
     }
-    /*
-    ⣤⣄⠀⠀⠀⠀⠀⠀⢀⣤⠶⠒⠚⠛⠒⠲⢦⣄⠀⠀⠀⠀⠀⠀
-⣤⡄⠀⠛⡿⠀⠀⠀⠀⠀⣴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⠀⠀⠀⠀
-⠙⢻⡀⠀⣧⠀⠀⠀⠀⢰⡇⠀⠀⠀⣠⡴⠞⠛⠓⢶⣄⠀⠸⣆⠀⠀⠀
-⠀⠈⢳⠶⠛⠛⠶⣄⠀⠸⡇⠀⢀⡾⠁⢀⡴⠶⢶⡄⠙⣧⠀⢻⠀⠀⠀
-⠀⠀⣟⠀⠀⠀⠀⠹⣦⡤⠿⠀⢸⡇⢠⡟⢀⡾⠀⣿⠀⣿⠀⣼⠁⠀⠀
-⠀⠀⢻⡀⠀⠀⠀⠀⠻⣄⠀⠀⠸⣇⠀⢷⡀⠛⠛⢁⣴⠃⣠⠏⠀⠀⠀
-⠀⠀⠀⠻⣆⠀⠀⠀⠀⠈⠳⢦⣄⣙⣷⣄⣉⠛⠛⣋⣠⡴⠋⠀⠀⠀⠀
-⠀⠀⠀⠀⠈⠛⢦⣄⡀⠀⠀⠀⠀⠀⠀⠉⠉⠙⠛⠛⠛⠓⠒⠶⠞⣻⠂
-⠀⠀⠀⠀⠀⠀⠘⢧⣤⡤⠖⠓⠶⠤⠶⠒⠶⠴⠞⠛⠶⠞⠛⠛⠛⠁CM
-    */
+    
+    public void EnqueueCharacters(Fighter character1, Fighter character2){
+        //Depending on the overallQuality of the characters, they will be added to their corresponding queue
+        if (character1.getOverallQuality() == 1) {
+            studio1.getPrior3Queue().enqueue(character1);
+            //System.out.println("Character " + character1.getId() + "has been added to studio1 prior3 queue");
+        }   
+        if (character1.getOverallQuality() == 2) {
+            studio1.getPrior2Queue().enqueue(character1);
+            //System.out.println("Character " + character1.getId() + "has been added to studio1 prior2 queue");
+        }
+        if (character1.getOverallQuality() == 3) {
+            studio1.getPrior1Queue().enqueue(character1);
+            //System.out.println("Character " + character1.getId() + "has been added to studio1 prior1 queue");
+        }
+        if (character2.getOverallQuality() == 1) {
+            studio2.getPrior3Queue().enqueue(character2);
+            //System.out.println("Character " + character2.getId() + "has been added to studio2 prior3 queue");
+        }
+        if (character2.getOverallQuality() == 2) {
+            studio2.getPrior2Queue().enqueue(character2);
+            //System.out.println("Character " + character2.getId() + "has been added to studio2 prior2 queue");
+        }
+        
+        if (character2.getOverallQuality() == 3) {
+            studio2.getPrior1Queue().enqueue(character2);
+            //System.out.println("Character " + character2.getId() + "has been added to studio2 prior1 queue");
+        }
+        updateReviewCycle();
+    }
+
     public void updateReviewCycle(){
         setReviewCycle(getReviewCycle() + 1);
         if (getReviewCycle() == 2){
